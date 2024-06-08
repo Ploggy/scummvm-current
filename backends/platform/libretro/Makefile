@@ -169,7 +169,7 @@ else ifeq ($(platform), wiiu)
    AR = $(DEVKITPPC)/bin/powerpc-eabi-ar$(EXE_EXT) rcs
    AR_ALONE = $(DEVKITPPC)/bin/powerpc-eabi-ar$(EXE_EXT)
    DEFINES += -mwup -mcpu=750 -meabi -mhard-float -D__POWERPC__ -D__ppc__ -DRETRO_IS_BIG_ENDIAN=1 -DRETRO_IS_LITTLE_ENDIAN=0 -DWORDS_BIGENDIAN=1
-   DEFINES += -U__INT32_TYPE__ -U __UINT32_TYPE__ -D__INT32_TYPE__=int
+   DEFINES += -ffunction-sections -fdata-sections -D__wiiu__ -D__wut__
    DEFINES += -DHAVE_STRTOUL -DWIIU
    CXXFLAGS := -fpermissive
    LITE := 1
